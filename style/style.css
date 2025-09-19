@@ -210,7 +210,7 @@ nav label {
 }
 @media (max-width: 950px) {
   .pixelart {
-    top: 55%;
+    top: 65%;
     transform: scale(0.4);
   }
 }

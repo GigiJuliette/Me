@@ -8,20 +8,20 @@ form.addEventListener('submit', async (e) => {
   const data = Object.fromEntries(formData.entries());
 
   try {
-    const response = await fetch('/api/contact.js', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
 
     if (response.ok) {
-      status.textContent = '✅ Message envoyé avec succès !';
+      status.textContent = 'Message envoyé avec succès !';
       form.reset();
     } else {
-      status.textContent = '❌ Une erreur est survenue.';
+      status.textContent = 'Une erreur est survenue.';
     }
   } catch (err) {
     console.error(err);
-    status.textContent = '❌ Échec lors de l’envoi.';
+    status.textContent = 'Échec lors de l’envoi.';
   }
 });
