@@ -13,9 +13,11 @@ body {
   font-weight: 200;
   margin: 1rem;
 
-  @media (max-width:950px) {}
+  @media (max-width:950px) {
+    gap: 3rem;
+  }
 
-  gap:3rem;
+
 }
 
 .hide {
@@ -45,10 +47,9 @@ nav {
   }
 }
 
-
-
 .pixelart {
   top: 47%;
+  left: 1rem;
   transform: scale(.5);
   position: absolute;
   animation: x 2s infinite;
@@ -57,8 +58,8 @@ nav {
   -o-animation: x 2s infinite;
 
   @media (max-width:950px) {
-    top: 65%;
-    transform: scale(.4);
+    top: 75%;
+    transform: scale(.3);
   }
 }
 
