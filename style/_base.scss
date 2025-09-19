@@ -8,3 +8,16 @@
   --g: rgba(230, 230, 156);
   --h: rgba(246, 248, 227);
 }
+
+@mixin retroUi {
+  font-family: 'Courier New',
+    Courier,
+    monospace;
+  border: 2px solid var(--b);
+  box-shadow: 4px 4px 0 0 var(--b);
+  padding: 1rem;
+
+  &:focus {
+    box-shadow: 3px 3px 0 0 var(--b), ;
+  }
+}

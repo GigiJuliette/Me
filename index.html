@@ -14,18 +14,49 @@
 
 <body>
   <nav>
-    <a href="https://github.com/GigiJuliette" target="_blank">Github</a>
+
     <input id="s" class="hide" type="button">
     <label for="s" class="label">
       <span>About me</span>
     </label>
     <input id="contactform" class="hide" type="button">
     <label for="contactform" class="label">
-      <span>Contact me</span>
+      <span>Get in touch</span>
     </label>
+
+
+
   </nav>
   <main>
     <div class="pixelart"></div>
+    <section id="contact">
+      <form id="contact-form" class="anim">
+        <span class="contact-form__1">Feel free to reach out by email or directly through this
+          form.</span>
+        <div class="contact-form__2">
+          <div class="pixelart-mail"></div>
+          <a style="width:4.5rem;height:4rem;position:absolute;
+  top:0;left:80%;" href="https://github.com/GigiJuliette" target="_blanck">
+            <div class="pixelart-github"></div>
+          </a>
+          <a style="width:4.5rem;height:4rem;position:absolute;
+  top:0;" href="https://www.linkedin.com/in/juliette-de-meo-a498b736a/" target="_blanck">
+            <div class="pixelart-linkedin"></div>
+          </a>
+        </div>
+
+        <input class="contact-form__3 input1" type="text" name="name" placeholder="Name" required />
+
+        <input class="contact-form__4 input2" type="email" name="email" placeholder="Email" required />
+
+
+        <textarea class="contact-form__5" name="message" placeholder="What's up?" required></textarea>
+
+        <button class="contact-form__6" type="submit">Send
+        </button>
+        <p id="status"></p>
+      </form>
+    </section>
   </main>
 </body>
 

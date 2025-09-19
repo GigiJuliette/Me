@@ -1,0 +1,15 @@
+{
+  "name": "gigi",
+  "version": "1.0.0",
+  "description": "v1",
+  "main": "contact.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Gigi",
+  "license": "ISC",
+  "dependencies": {
+    "resend": "^4.6.0"
+  }
+}
