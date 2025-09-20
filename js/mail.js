@@ -7,6 +7,13 @@ form.addEventListener('submit', async (e) => {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
 
+  const recaptchaToken = grecaptcha.getResponse();
+  if (!recaptchaToken) {
+    status.textContent = "Veuillez valider le reCAPTCHA.";
+    return;
+  }
+
+  data.recaptchaToken = recaptchaToken;
   try {
     const response = await fetch('/api/contact', {
       method: 'POST',

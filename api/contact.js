@@ -1,5 +1,7 @@
 import { Resend } from 'resend';
 
+const RECAPTCHA_SECRET = process.env.reCAPTCHA_secret;
+
 const resend = new Resend(process.env.RESEND_KEY);
 
 export default async function handler(req, res) {
@@ -7,7 +9,18 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Méthode non autorisée' });
   }
 
-  const { name, email, message } = req.body;
+  const { name, email, message, recaptchaToken } = req.body;
+
+  const verifyRes = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET}&response=${recaptchaToken}`,
+    { method: 'POST' }
+  );
+  const verifyData = await verifyRes.json();
+
+  if (!verifyData.success) {
+    return res.status(400).json({ error: "reCAPTCHA failed" });
+  }
+
 
   try {
     const { data, error } = await resend.emails.send({

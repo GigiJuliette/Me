@@ -12,12 +12,11 @@ body {
   font-family: "Jacquard 12";
   font-weight: 200;
   margin: 1rem;
+  cursor: url('img/mouse.svg'), auto;
 
   @media (max-width:950px) {
     gap: 3rem;
   }
-
-
 }
 
 .hide {
@@ -42,7 +41,7 @@ nav {
   & a,
   label {
     text-decoration: none;
-    cursor: pointer;
+    cursor: url('img/pointer.svg'), auto;
     color: var(--b);
   }
 }
