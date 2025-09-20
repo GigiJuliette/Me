@@ -7,11 +7,11 @@ form.addEventListener('submit', async (e) => {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
 
-
-  data.recaptchaToken = recaptchaToken;
   try {
     const recaptchaToken = await grecaptcha.execute("6LeMsc8rAAAAAId5LwmFhLrD7eVi_wwFtudXArcd", { action: "submit" });
+
     data.recaptchaToken = recaptchaToken;
+
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
