@@ -11,14 +11,15 @@ export default async function handler(req, res) {
 
   const { name, email, message, recaptchaToken } = req.body;
 
-  const verifyRes = await fetch(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET}&response=${recaptchaToken}`,
-    { method: 'POST' }
-  );
+  const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `secret=${RECAPTCHA_SECRET}&response=${recaptchaToken}`,
+  });
   const verifyData = await verifyRes.json();
 
-  if (!verifyData.success) {
-    return res.status(400).json({ error: "reCAPTCHA failed" });
+  if (!verifyData.success || verifyData.score < 0.5) {
+    return res.status(400).json({ error: "Échec reCAPTCHA" });
   }
 
 
