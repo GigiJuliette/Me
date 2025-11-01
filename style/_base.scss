@@ -7,17 +7,19 @@
   --f: rgba(206, 218, 108);
   --g: rgba(230, 230, 156);
   --h: rgba(246, 248, 227);
+  --main-color:#fff7ec;
+  --bg-color:#2a011b;
 }
 
 @mixin retroUi {
   font-family: 'Courier New',
     Courier,
     monospace;
-  border: 2px solid var(--b);
-  box-shadow: 4px 4px 0 0 var(--b);
+  border: 2px solid var(--bg-color);
+  box-shadow: 4px 4px 0 0 var(--bg-color);
   padding: 1rem;
 
   &:focus {
-    box-shadow: 3px 3px 0 0 var(--b), ;
+    box-shadow: 3px 3px 0 0 var(--bg-color), ;
   }
 }
